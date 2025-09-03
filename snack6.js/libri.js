@@ -97,3 +97,40 @@ console.log(
 // Creare un array (availableBooks) che contiene tutti i libri disponibili.
 // Crea un array (discountedBooks) con gli availableBooks, ciascuno con il prezzo scontato del 20% (mantieni lo stesso formato e arrotonda al centesimo)
 // Salva in una variabile (fullPricedBook) il primo elemento di discountedBooks che ha un prezzo intero (senza centesimi).
+
+const availableBooks = [];
+console.log(
+  "Iniazializzazione array di tutti i libri disponibili:",
+  availableBooks
+);
+
+const tuttiLibriDisponibili = books.filter((book) => {
+  if (book.available === true) {
+    availableBooks.push(book);
+    return availableBooks;
+  }
+});
+console.log(
+  "Risultato finale dell'array contenente tutti i libri disponibili è",
+  availableBooks
+);
+
+const discountedBooks = [];
+console.log("Inizializzaione array libri scontati", discountedBooks);
+
+const libriDisponibiliScontati20XCento = availableBooks.map((book) => {
+  console.log(
+    "Inizializzazione variabile del prezzo con il prezzo originale del libro",
+    book.price
+  );
+  const discount = 20 / 100;
+  console.log("Discount:", discount);
+  console.log("Book price:", book.price);
+  const discountPrice = parseInt(book.prince);
+  console.log("risultato di discountPrice", discountPrice);
+  book.price = discountPrice.toString();
+  discountedBooks.push(book);
+  return book;
+});
+
+console.log(libriDisponibiliScontati20XCento);
