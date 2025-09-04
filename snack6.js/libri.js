@@ -123,14 +123,20 @@ const libriDisponibiliScontati20XCento = availableBooks.map((book) => {
     "Inizializzazione variabile del prezzo con il prezzo originale del libro",
     book.price
   );
-  const discount = 20 / 100;
-  console.log("Discount:", discount);
-  console.log("Book price:", book.price);
-  const discountPrice = parseInt(book.prince);
-  console.log("risultato di discountPrice", discountPrice);
-  book.price = discountPrice.toString();
+  const discount = (parseInt(book.price) * 20) / 100;
+  console.log("Prezzo scontato:", discount);
+  book.price = (parseInt(book.price) - discount).toFixed(2);
+  console.log("Prezzo scontato finale del libro:", book.price);
   discountedBooks.push(book);
-  return book;
+  return discountedBooks;
 });
 
-console.log(libriDisponibiliScontati20XCento);
+console.log("I libri scontati sono:", libriDisponibiliScontati20XCento);
+
+const fullPricedBook = discountedBooks.find((book) => {
+  if (parseFloat(book.price) % 1 === 0) {
+    return book;
+  }
+});
+
+console.log(fullPricedBook);
