@@ -231,3 +231,18 @@ const booksByPricein = booksByPrice.filter((book) => {
   return book;
 });
 console.log("Libri ordinati in base anche alla disponibilità:", booksByPricein);
+
+// Snack 7 (Bonus) - Analizza i tag
+// Usa reduce per creare un oggetto (tagCounts) che conta quante volte ogni tag viene usato tra i libri.
+
+// SOLUZIONE TROVATA CON GEMINI
+
+const tagCounts = books.reduce((acc, curr) => {
+  curr.tags.forEach((tag) => {
+    accu[tag] = (acc[tag] || 0) + 1;
+    console.log(acc[tag]);
+  });
+  return acc;
+}, {});
+
+console.log(tagCounts);
