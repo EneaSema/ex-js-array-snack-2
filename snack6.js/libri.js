@@ -125,7 +125,7 @@ const libriDisponibiliScontati20XCento = availableBooks.map((book) => {
   );
   const discount = (parseInt(book.price) * 20) / 100;
   console.log("Prezzo scontato:", discount);
-  book.price = (parseInt(book.price) - discount).toFixed(2);
+  book.price = (parseFloat(book.price) - discount).toFixed(2);
   console.log("Prezzo scontato finale del libro:", book.price);
   discountedBooks.push(book);
   return discountedBooks;
@@ -140,3 +140,31 @@ const fullPricedBook = discountedBooks.find((book) => {
 });
 
 console.log(fullPricedBook);
+
+// Snack 3 - Calcola l’età media
+// Creare un array (ages) che contiene le età degli autori dei libri.
+// Calcola la somma delle età (agesSum) usando reduce.
+// Stampa in console l’età media degli autori dei libri.
+
+const ages = [];
+console.log(
+  "Inizializazione dell' array con tutte le età degli autori dei libri:",
+  ages
+);
+
+const etaautoriLibri = books.map((book) => {
+  ages.push(book.author.age);
+  return ages;
+});
+
+console.log(" Array con tutte le età degli autori dei libri:", ages);
+
+const agesSum = ages.reduce((acc, curr) => {
+  return acc + curr;
+}, 0);
+
+console.log("La somma di tutte le età degli autori è:", agesSum);
+
+const ageMiddleAuthors = agesSum / ages.length;
+
+console.log("L'età media degli autori dei libri è:", ageMiddleAuthors);
