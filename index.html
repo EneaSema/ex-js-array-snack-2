@@ -58,5 +58,35 @@
       <li>Crea un array (<b>agesSum</b>) usando reduce.</li>
       <li>Stampa in console l’età media degli autori dei libri.</li>
     </ul>
+    <h2><b>Snack 5 (Bonus) - Raccogli i libri</b></h2>
+    <p>
+      Nota: a differenza di quanto visto finora negli esempi, per accedere
+      all'API utilizzare l'url base: http://localhost:3333 al posto di:
+      https://freetestapi.com/api/v1 Ad esempio: http://localhost:3333/users per
+      chiamare l'endpoint /users Clicca qui per la guida su come installare il
+      Server API Locale!
+      <br />
+      Usando la l'API
+      <b>https://boolean-spec-frontend.vercel.app/freetestapi/books/{id}</b> usa
+      la combinazione di <b>.map()</b> e <b>Promise.all()</b>, per creare una
+      funzione (<b>getBooks</b>) che a partire da un array di id (<b>ids</b>),
+      ritorna una promise che risolve un array di libri (<b>books</b>). Testala
+      con l’array [2, 13, 7, 21, 19] .
+    </p>
+    <h2><b>Snack 6 (Bonus) - Ordina i libri </b></h2>
+    <ul>
+      <li>
+        Crea un array (<b>areThereAvailableBooks</b>) per verificare se c’è
+        almeno un libro disponibile.
+      </li>
+      <li>
+        Crea un array (<b>booksByPrice</b>) con gli elementi di books ordinati
+        in base al prezzo (crescente).
+      </li>
+      <li>
+        Ordina l’array <b>booksByPricein</b> base alla disponibilità (prima
+        quelli disponibili), senza creare un nuovo array.
+      </li>
+    </ul>
   </body>
 </html>

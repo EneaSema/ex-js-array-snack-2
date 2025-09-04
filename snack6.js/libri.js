@@ -168,3 +168,66 @@ console.log("La somma di tutte le età degli autori è:", agesSum);
 const ageMiddleAuthors = agesSum / ages.length;
 
 console.log("L'età media degli autori dei libri è:", ageMiddleAuthors);
+
+// Snack 5 (Bonus) - Raccogli i libri
+// Nota: a differenza di quanto visto finora negli esempi, per accedere all'API utilizzare l'url base:
+// http://localhost:3333
+// al posto di:
+// https://freetestapi.com/api/v1
+// Ad esempio:
+// http://localhost:3333/users
+// per chiamare l'endpoint /users
+// Clicca qui per la guida su come installare il Server API Locale!
+
+// Usando la l'API https://boolean-spec-frontend.vercel.app/freetestapi/books/{id} usa la combinazione di .map() e Promise.all(), per creare una funzione (getBooks) che a partire da un array di id (ids), ritorna una promise che risolve un array di libri (books).
+// Testala con l’array [2, 13, 7, 21, 19] .
+
+// const ids = [2, 13, 7, 21, 19];
+// const booksList = [];
+
+// async function getBooks(ids) {
+//   console.log("Sto caricando la funzione getBooks coni seguenti ids:", ids);
+//   const promises = ids.map((id) => {
+//     fetch(`http://localhost:3333/freetestapi/books/${id}`).then((resp) =>
+//       console.log(resp)
+//     );
+//     return promises;
+//   });
+//   resultsList = await Promise.all(promises);
+//   booksList.push(resultsList);
+
+//   console.log(`La mia book list è:`, booksList);
+//   return booksList;
+// }
+
+// (async () => {
+//   const solution = await getBooks(ids);
+//   console.log("La soluzione è:", solution);
+// })();
+
+//NON RIESCO A RISOLVERLO
+
+//Snack 6 (Bonus) - Ordina i libri
+// Crea una variabile booleana (areThereAvailableBooks) per verificare se c’è almeno un libro disponibile.
+// Crea un array (booksByPrice) con gli elementi di books ordinati in base al prezzo (crescente).
+// Ordina l’array booksByPricein base alla disponibilità (prima quelli disponibili), senza creare un nuovo array.
+
+const areThereAvailableBooks = "true";
+
+const booksByPrice = books.sort((a, b) => {
+  return parseFloat(a.price) - parseFloat(b.price);
+});
+console.log(
+  "Gli elemnti di books ordinati in maniera crescente sono:",
+  booksByPrice
+);
+
+const booksByPricein = booksByPrice.filter((book) => {
+  if (book.available === `true`) {
+    console.log("il libro è disponibile:", book);
+  } else {
+    console.log("il libro non è disponibile:", book);
+  }
+  return book;
+});
+console.log("Libri ordinati in base anche alla disponibilità:", booksByPricein);
